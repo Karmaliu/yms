@@ -1,0 +1,19 @@
+.root__header {
+    padding: 25px;
+    background: #ccc;
+}
+
+.header_button {
+    border: none;
+    padding: 5px 10px;
+}
+
+.root__header__button__red {
+    composes: header_button;
+    background: red;
+}
+
+.root__header__button__blue {
+    composes: header_button;
+    background: blue;
+}
