@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-// import Loadable from 'react-loadable';
+import Loadable from 'react-loadable';
 
-// const Loading = <div>1111</div>
-// const LoadableComponent = Loadable({
-//     loader: () => import('./layouts/BasicLayout'),
-//     loading: Loading,
-// });
-import App from "./App";
-const Home =()=> <div>3333</div>
+const Loading = () => <div>11112222</div>
+const LoadableComponent = Loadable({
+    loader: () => import('./layouts/BasicLayout'),
+    loading: Loading,
+});
+
 
 const RouterConfig = () => {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={Home} />
+                 <Route  path="/" component={LoadableComponent} >
+                </Route>
             </Switch>
         </Router>
     )
