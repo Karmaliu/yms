@@ -1,35 +1,38 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'antd';
+import SearchInput from '../components/SearchList/SearchInput';
+import serchDecorator from '../components/SearchList/serchDecorator';
+import List from '../components/SearchList/List';
+import listDecorator from '../components/SearchList/listDecorator';
 
+
+@serchDecorator
+@listDecorator
 @connect()
 export default class User extends PureComponent {
     constructor(props) {
         super(props)
-        this.state = {
-            value: 0,
-        }
-    }
-    componentDidMount() {
-        this.props.dispatch({
-            type: "queryUser",
-            payload: { name: "11" },
-        })
-        function incrment(state, props) {
-            return { value: state.value + 1 }
-        }
-        this.setState(incrment);
-        this.setState(incrment);
-        this.setState(incrment);
-        this.setState({ value: this.state.value + 1 })
-        this.setState(incrment);
     }
     render() {
-
-        console.log(this.state.value);
+        const {
+            placeholder,
+            changeVaule,
+            text,
+            data,
+            handleGetValue,
+        } = this.props;
         return (
             <div>
-                <Button type="primary">按钮</Button>
+                <SearchInput
+                    changeVaule={changeVaule}
+                    placeholder={placeholder}
+                    text={text}
+
+                />
+                <List
+                    data={data}
+                    handleGetValue={handleGetValue}
+                />
             </div>
         )
     }
