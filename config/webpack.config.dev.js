@@ -115,7 +115,6 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -144,7 +143,15 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-
+              presets: ["env", "react"],
+              plugins: [
+                //  装饰器
+                ["transform-decorators-legacy"],
+                [
+                  "import",
+                  { libraryName: "antd", style: 'css' }
+                ] //antd按需加载
+              ],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
@@ -190,6 +197,19 @@ module.exports = {
                 },
               },
             ],
+          },
+          {//antd样式处理
+            test: /\.css$/,
+            exclude: /src/,
+            use: [
+              { loader: "style-loader", },
+              {
+                loader: "css-loader",
+                options: {
+                  importLoaders: 1
+                }
+              }
+            ]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.

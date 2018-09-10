@@ -1,7 +1,8 @@
 import React from 'react';
 import Loadable from 'react-loadable';
+import { Spin } from 'antd';
 
-const Loading = () => <div>2222222</div>;
+const Loading = () => <div><Spin></Spin></div>;
 
 const loadableRouter = (loader) => {
     return Loadable({

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'antd';
 
 @connect()
 export default class User extends PureComponent {
@@ -11,7 +12,9 @@ export default class User extends PureComponent {
     }
     render() {
         return (
-            <div>111</div>
+            <div>
+                <Button type="primary">按钮</Button>
+            </div>
         )
     }
 }
