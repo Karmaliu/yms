@@ -1,18 +1,15 @@
 import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import SearchInput from '../components/SearchList/SearchInput';
 import serchDecorator from '../components/SearchList/serchDecorator';
 import List from '../components/SearchList/List';
 import asyncSelectDecorator from '../components/SearchList/asyncSelectDecorator';
 
+
 @asyncSelectDecorator
 @serchDecorator
 @connect()
 export default class User extends PureComponent {
-    constructor(props) {
-        super(props)
-    }
     render() {
         const {
             placeholder,

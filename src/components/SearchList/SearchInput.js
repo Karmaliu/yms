@@ -1,8 +1,9 @@
 import React from 'react';
-import { Input, Icon } from 'antd';
+import { Input } from 'antd';
+
 const SearchInput = ({ placeholder, text, changeVaule, onClickHeader }) => {
     return (
-        <div  onClick={onClickHeader}>
+        <div onClick={onClickHeader}>
             <div>
                 <Input
                     placeholder={placeholder}

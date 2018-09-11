@@ -4,7 +4,6 @@ const serchDecorator = WrappedComponent => {
     class SerchDecorator extends Component {
         constructor(props) {
             super(props);
-            console.log(props);
             this.state = {
                 text: "",
                 listDisplay: false,
@@ -33,15 +32,9 @@ const serchDecorator = WrappedComponent => {
         }
         changeVaule(e) {
             const { value } = e.target;
-            if (value) {
-                this.setState({
-                    activeData: this.props.data.filter(child => child.name.indexOf(value) !== -1),
-                })
-            } else {
-                this.setState({
-                    activeData: this.props.data,
-                })
-            }
+            this.setState({
+                activeData: value ? this.props.data.filter(child => child.name.indexOf(value) !== -1) : this.props.data,
+            })
             this.setState({
                 text: value,
             });

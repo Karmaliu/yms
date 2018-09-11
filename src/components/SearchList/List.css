@@ -1,0 +1,6 @@
+.list_item{
+    list-style: none;   
+    width: 200px;
+    padding: 5px;
+    background: rgba(200, 200, 200, 0.3);
+}
