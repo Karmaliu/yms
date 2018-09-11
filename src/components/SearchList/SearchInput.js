@@ -1,14 +1,16 @@
 import React from 'react';
 import { Input, Icon } from 'antd';
-const SearchInput = ({ isActive, placeholder, text, changeVaule }) => {
+const SearchInput = ({ placeholder, text, changeVaule, onClickHeader }) => {
     return (
-        <div>
-            <Input
-                placeholder={placeholder}
-                onChange={changeVaule}
-                value={text}
-                style={{ width: 200, margin: "20px 0px 0px 0px" }}
-            />
+        <div  onClick={onClickHeader}>
+            <div>
+                <Input
+                    placeholder={placeholder}
+                    onChange={changeVaule}
+                    value={text}
+                    style={{ width: 200, margin: "20px 0px 0px 0px" }}
+                />
+            </div>
         </div>
     )
 }

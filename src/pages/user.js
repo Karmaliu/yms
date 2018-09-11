@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import SearchInput from '../components/SearchList/SearchInput';
 import serchDecorator from '../components/SearchList/serchDecorator';
 import List from '../components/SearchList/List';
-import listDecorator from '../components/SearchList/listDecorator';
+import asyncSelectDecorator from '../components/SearchList/asyncSelectDecorator';
 
-
+@asyncSelectDecorator
 @serchDecorator
-@listDecorator
 @connect()
 export default class User extends PureComponent {
     constructor(props) {
@@ -18,20 +18,23 @@ export default class User extends PureComponent {
             placeholder,
             changeVaule,
             text,
-            data,
             handleGetValue,
+            listDisplay,
+            onClickHeader,
+            activeData,
         } = this.props;
         return (
             <div>
                 <SearchInput
                     changeVaule={changeVaule}
                     placeholder={placeholder}
+                    onClickHeader={onClickHeader}
                     text={text}
-
                 />
                 <List
-                    data={data}
                     handleGetValue={handleGetValue}
+                    listDisplay={listDisplay}
+                    data={activeData}
                 />
             </div>
         )
