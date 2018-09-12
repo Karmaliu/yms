@@ -6,6 +6,7 @@ import List from '../components/SearchList/List';
 import asyncSelectDecorator from '../components/SearchList/asyncSelectDecorator';
 
 
+
 @asyncSelectDecorator
 @serchDecorator
 @connect()

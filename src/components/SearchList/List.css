@@ -2,5 +2,22 @@
     list-style: none;   
     width: 200px;
     padding: 5px;
-    background: rgba(200, 200, 200, 0.3);
+    background: rgba(245, 245, 245, 0.3);
+
+    transition-property:background;
+    transition-duration:1.5s;
+    /* Firefox 4 */
+    -moz-transition-property:background;
+    -moz-transition-duration:1.5s;
+    /* Safari and Chrome */
+    -webkit-transition-property:background;
+    -webkit-transition-duration:1.5s;
+    /* Opera */
+    -o-transition-property:background;
+    -o-transition-duration:1.5s;
+}
+
+
+.list_item:hover{
+    background: rgba(0,191,255, .6);
 }

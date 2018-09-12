@@ -5,6 +5,7 @@ import styles from './List.css';
 @CSSModules(styles)
 export default class List extends PureComponent {
     render() {
+        console.log(this.props);
         const {
             data,
             handleGetValue,
